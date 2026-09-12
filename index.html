@@ -1,218 +1,900 @@
+```html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dr. Areej Zainab | Physical Therapy & Rehabilitation</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Areej Zainab | Doctor of Physical Therapy & Manual Therapist</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <style>
+    :root {
+      --primary-navy: #0b1d3a;
+      --navy-light: #162c50;
+      --teal-accent: #0e8388;
+      --teal-light: #2eafb5;
+      --gold-accent: #c5a880;
+      --gold-dark: #a27b4f;
+      --bg-cream: #fbfbf9;
+      --card-bg: #ffffff;
+      --text-main: #1f2937;
+      --text-muted: #64748b;
+      --border-subtle: #e2e8f0;
+      --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 10px 25px -5px rgba(11, 29, 58, 0.08);
+      --shadow-lg: 0 20px 35px -8px rgba(11, 29, 58, 0.12);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      overflow-x: hidden;
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, .font-serif {
+      font-family: 'Playfair Display', serif;
+    }
+
+    /* Container Utility */
+    .site-container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      z-index: 990;
+      background: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+      transition: all 0.3s ease;
+    }
+
+    .nav-wrapper {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-avatar {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-accent), var(--primary-navy));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #ffffff;
+      font-size: 1.2rem;
+      border: 2px solid var(--gold-accent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .brand-info h2 {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--primary-navy);
+      line-height: 1.2;
+    }
+
+    .brand-info span {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-weight: 600;
+      color: var(--teal-accent);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--text-main);
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--teal-accent);
+    }
+
+    .cta-nav {
+      background: #25d366;
+      color: #fff !important;
+      padding: 9px 20px;
+      border-radius: 40px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 600;
+      box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .cta-nav:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(37, 211, 102, 0.35);
+    }
+
+    .hero-section {
+      position: relative;
+      background: linear-gradient(135deg, var(--primary-navy) 0%, #0d2244 60%, #09172d 100%);
+      color: #ffffff;
+      padding: 100px 0 80px 0;
+      overflow: hidden;
+    }
+
+    .hero-bg-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('hero-bg.jpg') center/cover no-repeat;
+      opacity: 0.22;
+      filter: saturate(1.2) contrast(1.1);
+      z-index: 1;
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr 0.9fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .badge-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 18px;
+      background: rgba(197, 168, 128, 0.18);
+      border: 1px solid rgba(197, 168, 128, 0.4);
+      color: var(--gold-accent);
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      margin-bottom: 22px;
+    }
+
+    .hero-title {
+      font-size: 3.2rem;
+      line-height: 1.18;
+      margin-bottom: 20px;
+      color: #ffffff;
+    }
+
+    .hero-title span {
+      color: var(--gold-accent);
+      font-style: italic;
+    }
+
+    .hero-subtitle {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 560px;
+      margin-bottom: 35px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn-hero-primary {
+      background: var(--teal-accent);
+      color: #ffffff;
+      padding: 14px 32px;
+      border-radius: 8px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: 0.3s;
+      border: 1px solid var(--teal-light);
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-hero-primary:hover {
+      background: var(--teal-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-hero-outline {
+      background: rgba(255, 255, 255, 0.08);
+      color: #ffffff;
+      padding: 14px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-hero-outline:hover {
+      background: rgba(255, 255, 255, 0.16);
+    }
+
+    .hero-portrait-card {
+      position: relative;
+    }
+
+    .portrait-frame {
+      position: relative;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      border: 4px solid rgba(255, 255, 255, 0.15);
+      background: #112240;
+      aspect-ratio: 4 / 5;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .portrait-frame:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-experience-badge {
+      position: absolute;
+      bottom: -18px;
+      left: -18px;
+      background: #ffffff;
+      color: var(--primary-navy);
+      padding: 16px 22px;
+      border-radius: 14px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-left: 5px solid var(--gold-accent);
+    }
+
+    .hero-experience-badge i {
+      font-size: 2rem;
+      color: var(--teal-accent);
+    }
+
+    .hero-experience-badge h4 {
+      font-size: 1.1rem;
+      font-weight: 800;
+      line-height: 1.2;
+    }
+
+    .hero-experience-badge p {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .section-wrap {
+      padding: 90px 0;
+    }
+
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 55px auto;
+    }
+
+    .section-tag {
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--teal-accent);
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .section-heading {
+      font-size: 2.3rem;
+      color: var(--primary-navy);
+      margin-bottom: 14px;
+    }
+
+    .section-subtext {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 0.95fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+    }
+
+    .about-image-card {
+      position: relative;
+    }
+
+    .about-main-img {
+      width: 100%;
+      border-radius: 18px;
+      box-shadow: var(--shadow-md);
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      display: block;
+    }
+
+    .about-accent-frame {
+      position: absolute;
+      top: -15px;
+      left: -15px;
+      width: 100%;
+      height: 100%;
+      border: 3px solid var(--gold-accent);
+      border-radius: 20px;
+      z-index: -1;
+      opacity: 0.45;
+    }
+
+    .about-content h3 {
+      font-size: 1.95rem;
+      color: var(--primary-navy);
+      margin-bottom: 8px;
+    }
+
+    .about-designation {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--teal-accent);
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .about-bio {
+      color: var(--text-muted);
+      font-size: 1.02rem;
+      margin-bottom: 28px;
+      line-height: 1.75;
+    }
+
+    .badges-flex {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .pill-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #eef7f8;
+      color: var(--primary-navy);
+      padding: 9px 16px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid #d1edef;
+    }
+
+    .pill-badge i {
+      color: var(--teal-accent);
+    }
+
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+      gap: 26px;
+    }
+
+    .cert-item {
+      background: var(--card-bg);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-subtle);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .cert-item:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold-accent);
+    }
+
+    .cert-thumb-container {
+      position: relative;
+      height: 210px;
+      background: #0b1d3a12;
+      overflow: hidden;
+    }
+
+    .cert-thumb-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.4s ease;
+    }
+
+    .cert-item:hover .cert-thumb-container img {
+      transform: scale(1.06);
+    }
+
+    .cert-zoom-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(11, 29, 58, 0.45);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .cert-zoom-overlay span {
+      background: #ffffff;
+      color: var(--primary-navy);
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      box-shadow: var(--shadow-md);
+    }
+
+    .cert-item:hover .cert-zoom-overlay {
+      opacity: 1;
+    }
+
+    .cert-caption {
+      padding: 18px 20px;
+    }
+
+    .cert-caption span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal-accent);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+    }
+
+    .cert-caption h4 {
+      font-size: 1.05rem;
+      color: var(--primary-navy);
+      margin: 5px 0 8px 0;
+      line-height: 1.35;
+    }
+
+    .cert-caption p {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+    }
+
+    .pricing-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 32px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .pricing-card {
+      background: var(--card-bg);
+      border-radius: 18px;
+      padding: 40px 34px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-sm);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pricing-card.popular-tier {
+      border: 2px solid var(--teal-accent);
+      box-shadow: var(--shadow-md);
+    }
+
+    .popular-tag {
+      position: absolute;
+      top: -14px;
+      right: 28px;
+      background: linear-gradient(135deg, var(--teal-accent), var(--teal-light));
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 5px 16px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .pricing-title {
+      font-size: 1.4rem;
+      color: var(--primary-navy);
+      margin-bottom: 12px;
+    }
+
+    .pricing-amount {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--primary-navy);
+      margin: 16px 0 24px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .pricing-amount span {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .pricing-features {
+      list-style: none;
+      margin-bottom: 35px;
+    }
+
+    .pricing-features li {
+      padding: 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-main);
+      font-size: 0.96rem;
+      border-bottom: 1px dashed #f1f5f9;
+    }
+
+    .pricing-features li i {
+      color: var(--teal-accent);
+    }
+
+    .home-badge-alert {
+      background: #fdf6ec;
+      border: 1px solid #faeccd;
+      color: #b86200;
+      padding: 14px 20px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      max-width: 900px;
+      margin: 32px auto 0 auto;
+      font-size: 0.95rem;
+    }
+
+    .home-badge-alert i {
+      font-size: 1.3rem;
+    }
+
+    .clinic-info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--border-subtle);
+    }
+
+    .timings-card h3 {
+      font-size: 1.6rem;
+      color: var(--primary-navy);
+      margin-bottom: 20px;
+    }
+
+    .time-slot-list {
+      list-style: none;
+      margin-bottom: 30px;
+    }
+
+    .time-slot-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 13px 0;
+      border-bottom: 1px solid var(--border-subtle);
+      font-size: 0.98rem;
+    }
+
+    .time-slot-list li .day {
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .time-slot-list li .hours {
+      font-weight: 700;
+      color: var(--teal-accent);
+    }
+
+    .time-slot-list li .closed {
+      color: #e11d48;
+      font-weight: 700;
+    }
+
+    .contact-details-box {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #eef7f8;
+      color: var(--teal-accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.15rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item h5 {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      letter-spacing: 0.5px;
+    }
+
+    .contact-item p {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--primary-navy);
+    }
+
+    .map-frame-wrapper {
+      border-radius: 16px;
+      overflow: hidden;
+      min-height: 380px;
+      height: 100%;
+      border: 1px solid var(--border-subtle);
+    }
+
+    .map-frame-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      border: none;
+    }
+
+    .booking-wrapper {
+      max-width: 650px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 44px;
+      border-radius: 20px;
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-md);
+    }
+
+    .form-group-field {
+      margin-bottom: 20px;
+    }
+
+    .form-group-field label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.92rem;
+      color: var(--primary-navy);
+      margin-bottom: 8px;
+    }
+
+    .form-control-input {
+      width: 100%;
+      padding: 14px 18px;
+      border: 1px solid var(--border-subtle);
+      border-radius: 10px;
+      font-size: 0.98rem;
+      background: #f8fafc;
+      color: var(--text-main);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-control-input:focus {
+      outline: none;
+      border-color: var(--teal-accent);
+      box-shadow: 0 0 0 3px rgba(14, 131, 136, 0.15);
+      background: #ffffff;
+    }
+
+    .form-submit-btn {
+      width: 100%;
+      padding: 16px;
+      background: #25d366;
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .form-submit-btn:hover {
+      background: #20ba5a;
+      transform: translateY(-2px);
+    }
+
+    .lightbox-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 9999;
+      background: rgba(11, 29, 58, 0.92);
+      backdrop-filter: blur(8px);
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-dialog {
+      position: relative;
+      max-width: 900px;
+      width: 100%;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .modal-image-view {
+      max-width: 100%;
+      max-height: 80vh;
+      border-radius: 12px;
+      box-shadow: 0 25px 60px rgba(0, 0, 0, 0.6);
+      border: 3px solid rgba(255, 255, 255, 0.15);
+      object-fit: contain;
+    }
+
+    .modal-close-trigger {
+      position: absolute;
+      top: -46px;
+      right: 0;
+      background: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s;
+    }
+
+    .modal-close-trigger:hover {
+      background: rgba(255, 255, 255, 0.35);
+    }
+
+    .modal-caption-text {
+      color: #ffffff;
+      margin-top: 14px;
+      font-size: 1rem;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .site-footer {
+      background: var(--primary-navy);
+      color: #94a3b8;
+      padding: 40px 0;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    @media (max-width: 992px) {
+      .hero-grid, .about-layout, .clinic-info-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .hero-title {
+        font-size: 2.1rem;
+      }
+      .booking-wrapper {
+        padding: 24px;
+      }
+      .clinic-info-grid {
+        padding: 24px;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="logo"><i class="fa-solid fa-stethoscope"></i> Dr. Areej Zainab</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#credentials">Certificates</a>
-      <a href="#fees">Services & Fees</a>
-      <a href="#hours">Timing</a>
-      <a href="#book">Book Visit</a>
-    </nav>
+  <header class="site-header">
+    <div class="site-container">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">
+          <div class="brand-avatar">
+            <i class="fa-solid fa-stethoscope"></i>
+          </div>
+          <div class="brand-info">
+            <h2>Dr. Areej Zainab</h2>
+            <span>Doctor of Physical Therapy</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#credentials">Certificates</a></li>
+          <li><a href="#fees">Fees & Plans</a></li>
+          <li><a href="#hours">Timing</a></li>
+          <li><a href="#location">Clinic Location</a></li>
+        </ul>
+
+        <a href="https://wa.me/923187322556" target="_blank" class="cta-nav">
+          <i class="fa-brands fa-whatsapp text-lg"></i>
+          <span>+92 318 7322556</span>
+        </a>
+      </div>
+    </div>
   </header>
-
-  <!-- Hero Section with Lady Doctor Background -->
-  <section class="hero">
-    <div class="hero-overlay"></div>
-    <div class="hero-content">
-      <span class="subheading">Doctor of Physical Therapy (DPT)</span>
-      <h1>Evidence-Based Rehabilitation & Clinical Care</h1>
-      <p>Specialized manual therapy, restorative exercises, and dedicated home visit consultations across Gujrat.</p>
-      <div class="hero-buttons">
-        <a href="#book" class="btn btn-primary">Book Consultation</a>
-        <a href="https://wa.me/923187322556" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- About Section -->
-  <section id="about" class="section container">
-    <h2 class="section-title">About Dr. Areej Zainab</h2>
-    <div class="about-grid">
-      <div class="about-image-wrapper">
-        <img src="images/dr-areej.jpg" alt="Dr. Areej Zainab" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1594824813629-b68453f2e185?w=600&auto=format&fit=crop&q=80'" />
-      </div>
-      <div class="about-text">
-        <h3>Doctor of Physical Therapy (DPT)</h3>
-        <p class="qualification">Postgraduate Diploma in Manual Therapy (EQF Level 7 - UK)</p>
-        <p>
-          Dedicated to restoring physical mobility, reducing chronic pain, and guiding functional rehabilitation. Specialized in international manual therapy frameworks, specialized neuromusculoskeletal mobilization, and personalized clinical treatment plans tailored to each patient.
-        </p>
-        <div class="feature-badges">
-          <span><i class="fa-solid fa-house-medical"></i> Home Visits Available</span>
-          <span><i class="fa-solid fa-award"></i> UK Accredited Manual Therapist</span>
-          <span><i class="fa-solid fa-user-check"></i> Personalized Care</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Certificates Section -->
-  <section id="credentials" class="section bg-light">
-    <div class="container">
-      <h2 class="section-title">Official Certifications & Credentials</h2>
-      <p class="section-subtitle">Click any certificate to inspect credentials full-screen</p>
-      
-      <div class="cert-grid">
-        <div class="cert-card" onclick="openCert(this)">
-          <img src="images/cert-manual-therapy.jpg" alt="EQF Level 7 Diploma in Manual Therapy" onerror="this.src='https://images.unsplash.com/photo-1589330694653-dad6d3240a2b?w=600&auto=format&fit=crop&q=80'" />
-          <div class="cert-info">
-            <h4>EQF Level 7 Diploma</h4>
-            <p>Manual Therapy — MedicPro International Academy (UK)</p>
-          </div>
-        </div>
-
-        <div class="cert-card" onclick="openCert(this)">
-          <img src="images/cert-workshop.jpg" alt="Workshop on Facilitation Technique" onerror="this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=600&auto=format&fit=crop&q=80'" />
-          <div class="cert-info">
-            <h4>Facilitation Technique Workshop</h4>
-            <p>5th ICRS & 2nd ICAHS International Conference</p>
-          </div>
-        </div>
-
-        <div class="cert-card" onclick="openCert(this)">
-          <img src="images/cert-icrs-participation.jpg" alt="ICRS Conference Certificate" onerror="this.src='https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=600&auto=format&fit=crop&q=80'" />
-          <div class="cert-info">
-            <h4>12 CPD Points Award</h4>
-            <p>5th ICRS & 2nd ICAHS Participation</p>
-          </div>
-        </div>
-
-        <div class="cert-card" onclick="openCert(this)">
-          <img src="images/cert-transcript.jpg" alt="Academic Transcript in Manual Therapy" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80'" />
-          <div class="cert-info">
-            <h4>Academic Record</h4>
-            <p>Level 6 Manual Therapy Modules & Assessment</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Services & Fees Section -->
-  <section id="fees" class="section container">
-    <h2 class="section-title">Consultation & Therapy Fees</h2>
-    <div class="pricing-grid">
-      <div class="card price-card">
-        <h3>Single Clinical Session</h3>
-        <div class="price">Rs. 5,000 <span>/ session</span></div>
-        <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i> Complete patient history & assessment</li>
-          <li><i class="fa-solid fa-check"></i> Targeted physical / manual therapy</li>
-          <li><i class="fa-solid fa-check"></i> Postural correction guidance</li>
-        </ul>
-      </div>
-
-      <div class="card price-card featured">
-        <span class="badge">Recommended Package</span>
-        <h3>Rehabilitation Bundle (3 Sessions)</h3>
-        <div class="price">Rs. 12,000 <span>/ 3 sessions</span></div>
-        <ul class="plan-features">
-          <li><i class="fa-solid fa-check"></i> Full diagnostic check & recovery roadmap</li>
-          <li><i class="fa-solid fa-check"></i> 3 intensive treatment sessions</li>
-          <li><i class="fa-solid fa-check"></i> Save Rs. 3,000 compared to individual visits</li>
-          <li><i class="fa-solid fa-check"></i> Continuous rehabilitation follow-up</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <!-- Clinic Timings & Location Section -->
-  <section id="hours" class="section bg-light">
-    <div class="container timing-layout">
-      <div class="timing-details">
-        <h2 class="section-title text-left">Clinic Timings & Contact</h2>
-        
-        <ul class="timing-list">
-          <li>
-            <span>Monday – Saturday:</span>
-            <strong>03:00 PM – 09:00 PM</strong>
-          </li>
-          <li>
-            <span>Sunday:</span>
-            <strong class="closed">Closed</strong>
-          </li>
-          <li class="home-visit-alert">
-            <span><i class="fa-solid fa-car-side"></i> Home Visit Services:</span>
-            <span class="tag">Available on Booking</span>
-          </li>
-        </ul>
-
-        <div class="contact-data">
-          <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> <a href="tel:+923187322556">+92 318 7322556</a></p>
-          <p><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/923187322556" target="_blank">+92 318 7322556</a></p>
-          <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:areejzainab1130@gmail.com">areejzainab1130@gmail.com</a></p>
-          <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Gujrat, Punjab, Pakistan</p>
-        </div>
-      </div>
-
-      <div class="map-wrapper">
-        <!-- Embedded Google Map centered on Gujrat, Punjab -->
-        <iframe 
-          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107870.28784110303!2d74.00406830740925!3d32.58434771249767!2m3!1f0!2f0!3f0!3m2!1i1024!2f768!4f13.1!3m3!1m2!1s0x391f1b0a8805f14b%3A0x6a0c0e5a6a61ee92!2sGujrat%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
-          width="100%" 
-          height="320" 
-          style="border:0; border-radius: 10px;" 
-          allowfullscreen="" 
-          loading="lazy">
-        </iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Appointment Booking Section -->
-  <section id="book" class="section container">
-    <h2 class="section-title">Schedule an Appointment</h2>
-    <form id="appointmentForm" class="appointment-form">
-      <div class="form-group">
-        <label for="patientName">Patient Name</label>
-        <input type="text" id="patientName" required placeholder="Enter full name" />
-      </div>
-
-      <div class="form-group">
-        <label for="appointmentType">Service Type</label>
-        <select id="appointmentType" required>
-          <option value="Clinic Visit (Single Session - Rs. 5,000)">Clinic Visit (Single Session - Rs. 5,000)</option>
-          <option value="Clinic Bundle (3 Sessions - Rs. 12,000)">Clinic Bundle (3 Sessions - Rs. 12,000)</option>
-          <option value="Home Visit Request">Home Visit Consultation</option>
-        </select>
-      </div>
-
-      <div class="form-group">
-        <label for="visitDate">Preferred Date</label>
-        <input type="date" id="visitDate" required />
-      </div>
-
-      <div class="form-group">
-        <label for="notes">Condition / Symptoms</label>
-        <textarea id="notes" rows="3" placeholder="Briefly describe your pain, condition, or address for home visit..."></textarea>
-      </div>
-
-      <button type="submit" class="btn btn-whatsapp-submit"><i class="fa-brands fa-whatsapp"></i> Confirm via WhatsApp</button>
-    </form>
-  </section>
-
-  <!-- Certificate Image Modal Viewer -->
-  <div id="imageModal" class="modal" onclick="closeModal()">
-    <span class="close-btn">&times;</span>
-    <img class="modal-content" id="modalImg" alt="Enlarged Certificate View" />
-  </div>
-
-  <footer>
-    <p>&copy; 2026 Dr. Areej Zainab (DPT). All Rights Reserved. | Gujrat, Punjab, Pakistan</p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-  </html>
   
