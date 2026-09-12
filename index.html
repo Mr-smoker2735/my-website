@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dr. Areej Zainab | Physical Therapy & Rehabilitation</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <header class="navbar">
+    <div class="logo"><i class="fa-solid fa-stethoscope"></i> Dr. Areej Zainab</div>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#credentials">Certificates</a>
+      <a href="#fees">Services & Fees</a>
+      <a href="#hours">Timing</a>
+      <a href="#book">Book Visit</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section with Lady Doctor Background -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <span class="subheading">Doctor of Physical Therapy (DPT)</span>
+      <h1>Evidence-Based Rehabilitation & Clinical Care</h1>
+      <p>Specialized manual therapy, restorative exercises, and dedicated home visit consultations across Gujrat.</p>
+      <div class="hero-buttons">
+        <a href="#book" class="btn btn-primary">Book Consultation</a>
+        <a href="https://wa.me/923187322556" target="_blank" class="btn btn-whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp Direct</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section container">
+    <h2 class="section-title">About Dr. Areej Zainab</h2>
+    <div class="about-grid">
+      <div class="about-image-wrapper">
+        <img src="images/dr-areej.jpg" alt="Dr. Areej Zainab" class="profile-img" onerror="this.src='https://images.unsplash.com/photo-1594824813629-b68453f2e185?w=600&auto=format&fit=crop&q=80'" />
+      </div>
+      <div class="about-text">
+        <h3>Doctor of Physical Therapy (DPT)</h3>
+        <p class="qualification">Postgraduate Diploma in Manual Therapy (EQF Level 7 - UK)</p>
+        <p>
+          Dedicated to restoring physical mobility, reducing chronic pain, and guiding functional rehabilitation. Specialized in international manual therapy frameworks, specialized neuromusculoskeletal mobilization, and personalized clinical treatment plans tailored to each patient.
+        </p>
+        <div class="feature-badges">
+          <span><i class="fa-solid fa-house-medical"></i> Home Visits Available</span>
+          <span><i class="fa-solid fa-award"></i> UK Accredited Manual Therapist</span>
+          <span><i class="fa-solid fa-user-check"></i> Personalized Care</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Section -->
+  <section id="credentials" class="section bg-light">
+    <div class="container">
+      <h2 class="section-title">Official Certifications & Credentials</h2>
+      <p class="section-subtitle">Click any certificate to inspect credentials full-screen</p>
+      
+      <div class="cert-grid">
+        <div class="cert-card" onclick="openCert(this)">
+          <img src="images/cert-manual-therapy.jpg" alt="EQF Level 7 Diploma in Manual Therapy" onerror="this.src='https://images.unsplash.com/photo-1589330694653-dad6d3240a2b?w=600&auto=format&fit=crop&q=80'" />
+          <div class="cert-info">
+            <h4>EQF Level 7 Diploma</h4>
+            <p>Manual Therapy — MedicPro International Academy (UK)</p>
+          </div>
+        </div>
+
+        <div class="cert-card" onclick="openCert(this)">
+          <img src="images/cert-workshop.jpg" alt="Workshop on Facilitation Technique" onerror="this.src='https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=600&auto=format&fit=crop&q=80'" />
+          <div class="cert-info">
+            <h4>Facilitation Technique Workshop</h4>
+            <p>5th ICRS & 2nd ICAHS International Conference</p>
+          </div>
+        </div>
+
+        <div class="cert-card" onclick="openCert(this)">
+          <img src="images/cert-icrs-participation.jpg" alt="ICRS Conference Certificate" onerror="this.src='https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=600&auto=format&fit=crop&q=80'" />
+          <div class="cert-info">
+            <h4>12 CPD Points Award</h4>
+            <p>5th ICRS & 2nd ICAHS Participation</p>
+          </div>
+        </div>
+
+        <div class="cert-card" onclick="openCert(this)">
+          <img src="images/cert-transcript.jpg" alt="Academic Transcript in Manual Therapy" onerror="this.src='https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&auto=format&fit=crop&q=80'" />
+          <div class="cert-info">
+            <h4>Academic Record</h4>
+            <p>Level 6 Manual Therapy Modules & Assessment</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services & Fees Section -->
+  <section id="fees" class="section container">
+    <h2 class="section-title">Consultation & Therapy Fees</h2>
+    <div class="pricing-grid">
+      <div class="card price-card">
+        <h3>Single Clinical Session</h3>
+        <div class="price">Rs. 5,000 <span>/ session</span></div>
+        <ul class="plan-features">
+          <li><i class="fa-solid fa-check"></i> Complete patient history & assessment</li>
+          <li><i class="fa-solid fa-check"></i> Targeted physical / manual therapy</li>
+          <li><i class="fa-solid fa-check"></i> Postural correction guidance</li>
+        </ul>
+      </div>
+
+      <div class="card price-card featured">
+        <span class="badge">Recommended Package</span>
+        <h3>Rehabilitation Bundle (3 Sessions)</h3>
+        <div class="price">Rs. 12,000 <span>/ 3 sessions</span></div>
+        <ul class="plan-features">
+          <li><i class="fa-solid fa-check"></i> Full diagnostic check & recovery roadmap</li>
+          <li><i class="fa-solid fa-check"></i> 3 intensive treatment sessions</li>
+          <li><i class="fa-solid fa-check"></i> Save Rs. 3,000 compared to individual visits</li>
+          <li><i class="fa-solid fa-check"></i> Continuous rehabilitation follow-up</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clinic Timings & Location Section -->
+  <section id="hours" class="section bg-light">
+    <div class="container timing-layout">
+      <div class="timing-details">
+        <h2 class="section-title text-left">Clinic Timings & Contact</h2>
+        
+        <ul class="timing-list">
+          <li>
+            <span>Monday – Saturday:</span>
+            <strong>03:00 PM – 09:00 PM</strong>
+          </li>
+          <li>
+            <span>Sunday:</span>
+            <strong class="closed">Closed</strong>
+          </li>
+          <li class="home-visit-alert">
+            <span><i class="fa-solid fa-car-side"></i> Home Visit Services:</span>
+            <span class="tag">Available on Booking</span>
+          </li>
+        </ul>
+
+        <div class="contact-data">
+          <p><i class="fa-solid fa-phone"></i> <strong>Phone:</strong> <a href="tel:+923187322556">+92 318 7322556</a></p>
+          <p><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp:</strong> <a href="https://wa.me/923187322556" target="_blank">+92 318 7322556</a></p>
+          <p><i class="fa-solid fa-envelope"></i> <strong>Email:</strong> <a href="mailto:areejzainab1130@gmail.com">areejzainab1130@gmail.com</a></p>
+          <p><i class="fa-solid fa-location-dot"></i> <strong>Location:</strong> Gujrat, Punjab, Pakistan</p>
+        </div>
+      </div>
+
+      <div class="map-wrapper">
+        <!-- Embedded Google Map centered on Gujrat, Punjab -->
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d107870.28784110303!2d74.00406830740925!3d32.58434771249767!2m3!1f0!2f0!3f0!3m2!1i1024!2f768!4f13.1!3m3!1m2!1s0x391f1b0a8805f14b%3A0x6a0c0e5a6a61ee92!2sGujrat%2C%20Punjab%2C%20Pakistan!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s" 
+          width="100%" 
+          height="320" 
+          style="border:0; border-radius: 10px;" 
+          allowfullscreen="" 
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Appointment Booking Section -->
+  <section id="book" class="section container">
+    <h2 class="section-title">Schedule an Appointment</h2>
+    <form id="appointmentForm" class="appointment-form">
+      <div class="form-group">
+        <label for="patientName">Patient Name</label>
+        <input type="text" id="patientName" required placeholder="Enter full name" />
+      </div>
+
+      <div class="form-group">
+        <label for="appointmentType">Service Type</label>
+        <select id="appointmentType" required>
+          <option value="Clinic Visit (Single Session - Rs. 5,000)">Clinic Visit (Single Session - Rs. 5,000)</option>
+          <option value="Clinic Bundle (3 Sessions - Rs. 12,000)">Clinic Bundle (3 Sessions - Rs. 12,000)</option>
+          <option value="Home Visit Request">Home Visit Consultation</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="visitDate">Preferred Date</label>
+        <input type="date" id="visitDate" required />
+      </div>
+
+      <div class="form-group">
+        <label for="notes">Condition / Symptoms</label>
+        <textarea id="notes" rows="3" placeholder="Briefly describe your pain, condition, or address for home visit..."></textarea>
+      </div>
+
+      <button type="submit" class="btn btn-whatsapp-submit"><i class="fa-brands fa-whatsapp"></i> Confirm via WhatsApp</button>
+    </form>
+  </section>
+
+  <!-- Certificate Image Modal Viewer -->
+  <div id="imageModal" class="modal" onclick="closeModal()">
+    <span class="close-btn">&times;</span>
+    <img class="modal-content" id="modalImg" alt="Enlarged Certificate View" />
+  </div>
+
+  <footer>
+    <p>&copy; 2026 Dr. Areej Zainab (DPT). All Rights Reserved. | Gujrat, Punjab, Pakistan</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+  </html>
+  
